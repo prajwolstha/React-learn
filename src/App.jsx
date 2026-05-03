@@ -2,13 +2,14 @@ import Header from "./Header";
 import Footer from "./Footer";
 import UserCard from "./UserCard";
 import ProductCard from "./ProductCard";
+import Counter from "./Counter";
 function App() {
   const name = "Prajwol";
   return (
     <div>
       <Header />
       <h1>Hello {name} </h1>
-
+      <Counter />
       <UserCard name="Alice" age={30} />
       <UserCard name="Bob" age={25} />
       <UserCard name="Charlie" age={35} />
@@ -17,7 +18,7 @@ function App() {
       <ProductCard name = "Samsung Galaxy" price="$899" rating="4.0" />
       <ProductCard name = "OnePlus 12" price="$799" rating="4.2" />
       <Footer />
-    </div>
+    </div> 
   );
 }
 
