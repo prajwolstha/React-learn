@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import UserCard from "./UserCard";
 import ProductCard from "./ProductCard";
 import Counter from "./Counter";
+import Form from "./Form";
 function App() {
   const name = "Prajwol";
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <h1>Hello {name} </h1>
       <Counter />
+      <Form />
       <UserCard name="Alice" age={30} />
       <UserCard name="Bob" age={25} />
       <UserCard name="Charlie" age={35} />
