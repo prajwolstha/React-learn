@@ -23,12 +23,8 @@ function LoginForm() {
 
     const data = await response.json();
 
-   if (response.ok) {
-  console.log(data); // 🔍 see full response
-
-  // ✅ store token
-  localStorage.setItem("token", data.token);
-
+if (response.ok) {
+  localStorage.setItem("token", data.token); // ✅ REQUIRED
   alert(data.message);
   handleClear();
 }else {

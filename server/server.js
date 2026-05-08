@@ -19,8 +19,6 @@ app.get("/", (req, res) => {
   res.send("API running");
 });
 
-console.log("SERVER STARTED");
-console.log("AUTH ROUTES LOADED");
 // connect DB
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {

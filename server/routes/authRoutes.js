@@ -5,7 +5,30 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 const User = require("../models/User");
+const authMiddleware = require("../middleware/authMiddleware");
 
+
+// middleware to protect routes
+router.get("/protected", authMiddleware, (req, res) => {
+
+  res.json({
+    message: `Hello ${req.user.email}, you accessed a protected route!`
+  });
+
+});
+
+
+router.get("/dashboard", authMiddleware, (req, res) => {
+
+  res.json({
+    message: "Welcome to your dashboard",
+    user: {
+      userId: req.user.userId,
+      email: req.user.email
+    }
+  });
+
+});
 // ================= REGISTER =================
 router.post("/register", async (req, res) => {
   const { email, password } = req.body;
